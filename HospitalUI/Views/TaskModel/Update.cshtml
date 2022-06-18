@@ -1,0 +1,57 @@
+﻿@using Entities.Concrete
+@model TaskModel 
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <h4 class="text-success">Düzenleme Sayfası</h4>
+        @using (Html.BeginForm("Update", "TaskModel", FormMethod.Post))
+            {
+                
+                @Html.HiddenFor(b => b.TaskId, new { @class = "form-control" })
+               
+             
+                
+                @Html.Label("Task")
+                @Html.TextBoxFor(b => b.Task, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.Task)</label>
+                <br />
+                @Html.Label("Tarih/Saat")   
+                @Html.TextBoxFor(x => x.TaskDate, "{0:yyyy-MM-ddTHH:mm:ss}", new
+                       {
+                           @class = "form-control",
+                           required = "required",
+                           @type = "datetime-local"
+                       })
+                <br />
+                @Html.Label("Hastane")
+                @Html.DropDownListFor(x=>x.HospitalId,(List<SelectListItem>)ViewBag.hospital,new{@class="form-control"})
+               
+                <br />
+                @Html.Label("Doktor")
+                @Html.DropDownListFor(x=>x.DoctorId,(List<SelectListItem>)ViewBag.doktor,new{@class="form-control"})
+                
+                <br />
+                @Html.Label("Branş")
+                @Html.DropDownListFor(x=>x.BranchId,(List<SelectListItem>)ViewBag.branch,new{@class="form-control"})
+                
+                <br />
+                @Html.Label("Ne Yapıldı")
+                @Html.TextAreaFor(b => b.Description, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.Description)</label>
+                <br />
+                <input type="hidden" name="Email" value="@ViewBag.Mail"/>
+                <button class="btn btn-success">Kaydet</button> 
+
+            }         
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+
+

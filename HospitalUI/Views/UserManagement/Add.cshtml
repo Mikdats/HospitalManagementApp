@@ -1,0 +1,50 @@
+﻿@using Entities.Concrete
+@model User
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            <h1>Yeni Personel Ekle</h1>
+            @using (Html.BeginForm("Add", "UserManagement", FormMethod.Post))
+            {
+                @Html.Label("Email")
+                @Html.TextBoxFor(b => b.Email, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.Email)</label>
+                <br />
+                @Html.Label("Password")
+                @Html.TextBoxFor(b => b.Password, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.Password)</label>
+                <br />               
+                @Html.Label("Password Repeat")
+                @Html.TextBoxFor(b => b.PasswordRepeat, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.PasswordRepeat)</label>
+                <br />
+                @Html.Label("First Name")
+                @Html.TextBoxFor(b => b.FirstName, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.FirstName)</label>
+                <br />
+                @Html.Label("Last Name")
+                @Html.TextBoxFor(b => b.LastName, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.LastName)</label>
+                <br />                              
+                @Html.Label("Role Id")
+                @Html.TextBoxFor(b => b.RoleId, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.RoleId)</label>
+                <br />
+                <button class="btn btn-success"> Kaydet </button>
+                <input type="reset" value="Clear" class="btn btn-danger" />
+            }
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,34 @@
+﻿@using Entities.DTOs
+@model UserViewModel
+
+@{ ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<div id="login-div">
+    <div class="row">
+        <div class="col-12">
+            <form asp-controller="User" asp-action="Index">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label style="color: black"><b> <i class="bi bi-person-circle"></i> Giriş Ekranı</b></label>
+                    <span class="alert-danger" m-b-5>@Html.ValidationMessage("Error1")</span>
+                </div>
+                <div class="form-group">
+                    <label>E-Posta</label>
+                    <input asp-for="Email" class="form-control" style="color:black" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Şifre</label>
+                    <input asp-for="Password" class="form-control" style="color:black" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <br />
+                    <input type="submit" value="Giriş Yap" class="btn btn-success" />
+                    <input type="reset" value="Sil" class="btn btn-danger" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

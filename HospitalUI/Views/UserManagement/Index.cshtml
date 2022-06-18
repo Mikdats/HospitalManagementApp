@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="col-8">
+        <h2>Yönetim Ekranları</h2>
+        <a class="btn btn-primary" href="~/Hospital/GetAll" role="button">Hastane Ekranı</a>
+        <br />
+        <br />
+        <a class="btn btn-info" href="~/Doctor/GetAll" role="button">Doktor Ekranı</a>
+        <br />
+        <br />
+        <a class="btn btn-success" href="~/Branch/GetAll" role="button">Branş Ekranı</a>
+        <br />
+        <br />
+        <a class="btn btn-secondary" href="~/UserManagement/GetAll" role="button">Kullanıcılar Listesi</a>
+         <br />
+        <br />
+        <a class="btn btn-danger" href="~/UserManagement/GetAllTaskForAdmin" role="button">Task Listesi</a>
+    </div>
+</div>
+

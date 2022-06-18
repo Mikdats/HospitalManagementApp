@@ -1,0 +1,26 @@
+﻿@using Entities.Concrete
+@model Hospital
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            <h2>Hastane Ekle</h2>
+            @using (Html.BeginForm("Add", "Hospital", FormMethod.Post))
+            {
+                @Html.TextBoxFor(b => b.HospitalName, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.HospitalName)</label>
+                <br />
+                <button class="btn btn-success">Kaydet</button>              
+            }               
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+</div>

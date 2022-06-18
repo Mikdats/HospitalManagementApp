@@ -1,0 +1,59 @@
+﻿@using Entities.DTOs
+@model AdminViewModel
+@{
+    ViewData["Title"] = "GetTaskForAdminComment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-8">
+        <h4 class="text-success">Admin Yorum Sayfası</h4>
+        <br />
+        <form asp-action="GetTaskForAdminComment" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TaskId" />
+            <div class="form-group">
+                Task
+                <input asp-for="Task" disabled class="form-control" />
+                <span asp-validation-for="Task" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Tarih/Saat
+                <input asp-for="TaskDate" disabled class="form-control" />
+                <span asp-validation-for="TaskDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Hastane
+                <input asp-for="HospitalName" disabled class="form-control" />
+                <span asp-validation-for="HospitalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Branş
+                <input asp-for="BranchName" disabled class="form-control" />
+                <span asp-validation-for="BranchName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Doktor
+                <input asp-for="DoctorFullName" disabled class="form-control" />
+                <span asp-validation-for="DoctorFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Ne Yapıldı
+                <input asp-for="Description" disabled class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>         
+                @Html.Label("Yorum")
+                @Html.TextAreaFor(b => b.CommentName, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.CommentName)</label>
+                <br />  
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-success" />
+                               
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+

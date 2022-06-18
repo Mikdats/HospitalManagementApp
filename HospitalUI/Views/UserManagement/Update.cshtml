@@ -1,0 +1,57 @@
+﻿@using Entities.Concrete
+@model User
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <h4 class="text-success">Editing Page</h4>
+        <br />
+        <form asp-action="Update" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserId" />
+            <div class="form-group">
+                Email
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Password
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Password Repeat
+                <input asp-for="PasswordRepeat" class="form-control" />
+                <span asp-validation-for="PasswordRepeat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                First Name
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Last Name
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>          
+            <div class="form-group">
+                Role Id
+                <input asp-for="RoleId" class="form-control" />
+                <span asp-validation-for="RoleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Changes" class="btn btn-success" />
+                <input type="reset" value="Clear" class="btn btn-danger" />
+                <a asp-action="GetAll" class="btn btn-primary">Users List</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>

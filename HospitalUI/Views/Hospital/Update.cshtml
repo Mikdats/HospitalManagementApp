@@ -1,0 +1,31 @@
+﻿@using Entities.Concrete
+@model Hospital
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <h4 class="text-success">Hastane Düzenleme Sayfası</h4>
+        <br />
+        <form asp-action="Update" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HospitalId" />
+            <div class="form-group">
+                Hastane Adı
+                <input asp-for="HospitalName" class="form-control" />
+                <span asp-validation-for="HospitalName" class="text-danger"></span>
+            </div>                      
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-success" />                             
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+
+
